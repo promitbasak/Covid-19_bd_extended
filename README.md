@@ -254,9 +254,7 @@ plt.legend(loc="upper left")
 plt.show()
 ```
 
-```{.json .output n=11}
 ![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_1.png "Fig_1")
-```
 
 Okay. So the dataset has been built. Now it's time to do some visualization. I will use pyplot to obtain curves and bartcharts. These charts will give a very good idea of the current situation of Covid-19 epidemic in Bangladesh. I will use different colors for different kind of data.
 
@@ -270,9 +268,207 @@ plt.title("Curve of Covid-19 Total Cases Each Day in Bangladesh")
 plt.grid(True)
 plt.show()
 ```
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_2.png "Fig_2")
 
-```{.json .output n=12}
-[
- {
-  "data": {
-   "image/png": "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
+
+```python
+plt.bar(dataset['Date'],dataset['Total Cases'],alpha=0.5)
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("Total Cases")
+plt.title("Covid-19 Total Cases Each Day in Bangladesh")
+plt.show()
+```
+
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_3.png "Fig_3")
+
+
+```python
+plt.plot(dataset['Date'],dataset['New Cases'],alpha=0.8)
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("New Cases")
+plt.title("Curve of Covid-19 New Cases Each Day in Bangladesh")
+plt.grid(True)
+plt.show()
+```
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_4.png "Fig_4")
+
+```python
+plt.bar(dataset['Date'],dataset['New Cases'],align='center',alpha=0.5)
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("Confirmed Cases")
+plt.title("Covid-19 New Cases Each Day in Bangladesh")
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_5.png "Fig_5")
+
+```python
+plt.plot(dataset['Date'],dataset['New Deaths'],color=(0.8,0,0,0.5))
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("New Deaths")
+plt.title("Curve of Covid-19 New Deaths Each Day in Bangladesh")
+plt.grid(True)
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_6.png "Fig_6")
+
+```python
+plt.bar(dataset['Date'],dataset['New Deaths'],align='center',color=(0.8,0,0,0.5))
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("New Deaths")
+plt.title("Covid-19 New Deaths Each Day in Bangladesh")
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_7.png "Fig_7")
+
+```python
+plt.plot(dataset['Date'],dataset['Total Deaths'],color=(0.8,0,0,0.5))
+plt.fill_between(dataset['Date'], dataset['Total Deaths'], 0,color=(0.8,0,0,0.3))
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("Total Deaths")
+plt.title("Curve of Covid-19 Total Deaths Each Day in Bangladesh")
+plt.grid(True)
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_8.png "Fig_8")
+
+```python
+plt.bar(dataset['Date'],dataset['Total Deaths'],align='center',color=(0.8,0,0,0.5))
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("Total Deaths")
+plt.title("Covid-19 Total Deaths Each Day in Bangladesh")
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_9.png "Fig_9")
+
+```python
+plt.plot(dataset['Date'],dataset['New Recovered'],color=(0,0.8,0.4,0.8))
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("New Recovered")
+plt.title("Curve of Covid-19 New Recovered Each Day in Bangladesh")
+plt.grid(True)
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_10.png "Fig_10")
+
+```python
+plt.bar(dataset['Date'],dataset['New Recovered'],align='center',color=(0,0.8,0.4,0.8))
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("New Recovered")
+plt.title("Covid-19 New Recovered Each Day in Bangladesh")
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_11.png "Fig_11")
+
+```python
+plt.plot(dataset['Date'],dataset['Total Recovered'],color=(0,0.8,0.4,0.8))
+plt.fill_between(dataset['Date'], dataset['Total Recovered'], 0,color=(0,0.8,0.4,0.3))
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("Total Recovered")
+plt.title("Curve of Covid-19 Total Recovered Each Day in Bangladesh")
+plt.grid(True)
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_12.png "Fig_12")
+
+```python
+plt.bar(dataset['Date'],dataset['Total Recovered'],align='center',color=(0,0.8,0.4,0.8))
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("Total Recovered")
+plt.title("Covid-19 Total Recovered Each Day in Bangladesh")
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_13.png "Fig_13")
+
+```python
+plt.plot(dataset['Date'],dataset['Total Active'],color='#ffea00',alpha=1)
+plt.fill_between(dataset['Date'], dataset['Total Active'], 0,color='#ffea00', alpha=0.3)
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("Total Active Cases")
+plt.title("Curve of Covid-19 Total Active Cases Each Day in Bangladesh")
+plt.grid(True)
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_14.png "Fig_14")
+
+```python
+plt.bar(dataset['Date'],dataset['Total Active'],align='center',color='#ffea00',alpha=0.7,)
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("Total Active Casess")
+plt.title("Covid-19 Total Active Cases Each Day in Bangladesh")
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_15.png "Fig_15")
+
+```python
+plt.plot(dataset['Date'],dataset['Death/Cases (%)'],color=(0.5,0.5,0.9,1))
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("Percentage of Deaths Per Cases")
+plt.title("Curve of Covid-19 Percentage of Deaths Per Cases each day in Bangladesh")
+plt.grid(True)
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_16.png "Fig_16")
+```python
+plt.bar(dataset['Date'],dataset['Death/Cases (%)'],align='center',color=(0.5,0.5,0.9,1))
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("Percentage of Deaths Per Cases")
+plt.title("Covid-19 Percentage of Deaths Per Cases Each Day in Bangladesh")
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_17.png "Fig_17")
+
+```python
+plt.plot(dataset['Date'],dataset['Cases/Tests(%)'],color=(0.7,0.3,0.9,1))
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("Percentage of Confirmed Cases per Tests")
+plt.title("Curve of Covid-19 Percentage of Confirmed Cases per Tests each day in Bangladesh")
+plt.grid(True)
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_18.png "Fig_18")
+
+```python
+plt.bar(dataset['Date'],dataset['Cases/Tests(%)'],align='center',color=(0.7,0.3,0.9,0.5))
+plt.xticks(rotation=90)
+plt.xlabel("Date")
+plt.ylabel("Percentage of Confirmed Cases per Tests")
+plt.title("Covid-19 Percentage of Confirmed Cases per Tests Each Day in Bangladesh")
+plt.show()
+```
+
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_19.png "Fig_19")
+
+I think this is a good practice for today. It's pretty late to sleep. So I finish it here. I will do some more work on it, if something comes to my mind.
+
+## All the data here are collected until April 10, 2020. I may not upadate readme anymore, but I will try to upload new datasets and figures everyday.
