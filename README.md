@@ -1,27 +1,11 @@
-# Creating an Extended dataset of Covid-19 Epidemic in Bangladesh and showing
-them in some basic visualizations
+# Creating an Extended dataset of Covid-19 Epidemic in Bangladesh and showing them in some basic visualizations
 
-Covid-19 has taken an epidemic form all over the world. Producing a fair dataset
-of all the informations will give a closer look to the dynamics of the current
-situation. But, in Bangladesh, it is very hard to get an extended database. All
-I found on the internet are Cumulative dataset of Confirmed, Recovered and
-Deaths only. So, I decided to make one myself. I am a very very beginner in this
-arena. So, this is actually my practice pad.
+Covid-19 has taken an epidemic form all over the world. Producing a fair dataset of all the informations will give a closer look to the dynamics of the current situation. But, in Bangladesh, it is very hard to get an extended database. All I found on the internet are Cumulative dataset of Confirmed, Recovered and Deaths only. So, I decided to make one myself. I am a very very beginner in this arena. So, this is actually my practice pad.
 
-I got a dataset on the Internet only containing the cumulative Confirmed,
-Recovered and Deaths counts. I happen to find some press releases regarding
-covid-19 on these sources,
-[Here](https://iedcr.gov.bd/index.php/component/content/article/11-others/227-pressrelease)
-and [Here](https://corona.gov.bd/press-release). But they contain inconsistant
-and ambiguous informations. Yet, I checked my downloaded dataset, made some
-edits and collected the information of tests per day.
+I got a dataset on the Internet only containing the cumulative Confirmed, Recovered and Deaths counts. I happen to find some press releases regarding covid-19 on these sources, [Here](https://iedcr.gov.bd/index.php/component/content/article/11-others/227-pressrelease) and [Here](https://corona.gov.bd/press-release). But they contain inconsistant
+and ambiguous informations. Yet, I checked my downloaded dataset, made some edits and collected the information of tests per day.
 
-So, The data collection is over, now it's time to accumalate them and producing
-some more facts outta them. I am using Python to code and pandas to sort things
-out. Okay, then start with importing sum modules that will help us in rest of
-the parts. I imported `chdir` from `OS` to change my working directory. I also
-explecitly imported the matplotlib converters because in future the program will
-erroneous except it.
+So, The data collection is over, now it's time to accumalate them and producing some more facts outta them. I am using Python to code and pandas to sort things out. Okay, then start with importing sum modules that will help us in rest of the parts. I imported `chdir` from `OS` to change my working directory. I also explecitly imported the matplotlib converters because in future the program will erroneous except it.
 
 ```{.python .input  n=1}
 from os import chdir
@@ -33,10 +17,7 @@ register_matplotlib_converters()
 %matplotlib inline
 ```
 
-The edited csv file is read using pandas' built in `read_csv` method which
-directly converts the csv file into pandas dataframe. Let's see what's inside
-the file and what are the data types. The data types I may have to be changed
-according to my need.
+The edited csv file is read using pandas' built in `read_csv` method which directly converts the csv file into pandas dataframe. Let's see what's inside the file and what are the data types. The data types I may have to be changed according to my need.
 
 ```{.python .input  n=2}
 chdir('E:\\Projects\\Jupyter\\Covid-19BD')
@@ -46,20 +27,49 @@ print(dataset.dtypes)
 ```
 
 ```{.json .output n=2}
-[
- {
-  "name": "stdout",
-  "output_type": "stream",
-  "text": "          Date  Confirmed  Deaths  Recovered\n0   2020-03-08          3       0          0\n1   2020-03-09          3       0          0\n2   2020-03-10          3       0          0\n3   2020-03-11          3       0          0\n4   2020-03-12          3       0          0\n5   2020-03-13          3       0          0\n6   2020-03-14          3       0          0\n7   2020-03-15          5       0          0\n8   2020-03-16          8       0          0\n9   2020-03-17         10       0          0\n10  2020-03-18         14       1          3\n11  2020-03-19         17       1          3\n12  2020-03-20         20       1          3\n13  2020-03-21         24       1          3\n14  2020-03-22         28       2          3\n15  2020-03-23         33       2          3\n16  2020-03-24         39       3          5\n17  2020-03-25         39       5          7\n18  2020-03-26         44       5         11\n19  2020-03-27         48       5         11\n20  2020-03-28         48       5         15\n21  2020-03-29         48       5         15\n22  2020-03-30         49       5         19\n23  2020-03-31         51       5         25\n24  2020-04-01         54       6         26\n25  2020-04-02         56       6         26\n26  2020-04-03         61       6         26\n27  2020-04-04         70       8         30\n28  2020-04-05         88       9         30\n29  2020-04-06        123      12         33\n30  2020-04-07        164      17         33\n31  2020-04-08        218      20         33\n32  2020-04-09        330      21         33\n33  2020-04-10        424      27         33\nDate         object\nConfirmed     int64\nDeaths        int64\nRecovered     int64\ndtype: object\n"
- }
-]
+          Date  Confirmed  Deaths  Recovered
+0   2020-03-08          3       0          0
+1   2020-03-09          3       0          0
+2   2020-03-10          3       0          0
+3   2020-03-11          3       0          0
+4   2020-03-12          3       0          0
+5   2020-03-13          3       0          0
+6   2020-03-14          3       0          0
+7   2020-03-15          5       0          0
+8   2020-03-16          8       0          0
+9   2020-03-17         10       0          0
+10  2020-03-18         14       1          3
+11  2020-03-19         17       1          3
+12  2020-03-20         20       1          3
+13  2020-03-21         24       1          3
+14  2020-03-22         28       2          3
+15  2020-03-23         33       2          3
+16  2020-03-24         39       3          5
+17  2020-03-25         39       5          7
+18  2020-03-26         44       5         11
+19  2020-03-27         48       5         11
+20  2020-03-28         48       5         15
+21  2020-03-29         48       5         15
+22  2020-03-30         49       5         19
+23  2020-03-31         51       5         25
+24  2020-04-01         54       6         26
+25  2020-04-02         56       6         26
+26  2020-04-03         61       6         26
+27  2020-04-04         70       8         30
+28  2020-04-05         88       9         30
+29  2020-04-06        123      12         33
+30  2020-04-07        164      17         33
+31  2020-04-08        218      20         33
+32  2020-04-09        330      21         33
+33  2020-04-10        424      27         33
+Date         object
+Confirmed     int64
+Deaths        int64
+Recovered     int64
+dtype: object
 ```
 
-So, the dataset is in cumulative form which I have already mentioned. It's a
-good thing that the numbers are already in `int64` type, so they don't need to
-be changed. But in case of the `Date` column, I will turn it into datetime
-object. I will print  aportion of the dataframe and data types to be sure if
-this is working fine.
+So, the dataset is in cumulative form which I have already mentioned. It's a good thing that the numbers are already in `int64` type, so they don't need to be changed. But in case of the `Date` column, I will turn it into datetime object. I will print  a portion of the dataframe and data types to be sure if this is working fine.
 
 ```{.python .input  n=3}
 dataset['Date'] = pd.to_datetime(dataset['Date'], format='%Y-%m-%d')
@@ -69,13 +79,18 @@ print(dataset.dtypes)
 ```
 
 ```{.json .output n=3}
-[
- {
-  "name": "stdout",
-  "output_type": "stream",
-  "text": "        Date  Confirmed  Deaths  Recovered\n0 2020-03-08          3       0          0\n1 2020-03-09          3       0          0\n2 2020-03-10          3       0          0\n3 2020-03-11          3       0          0\n4 2020-03-12          3       0          0\nDate         datetime64[ns]\nConfirmed             int64\nDeaths                int64\nRecovered             int64\ndtype: object\n"
- }
-]
+        Date  Confirmed  Deaths  Recovered
+0 2020-03-08          3       0          0
+1 2020-03-09          3       0          0
+2 2020-03-10          3       0          0
+3 2020-03-11          3       0          0
+4 2020-03-12          3       0          0
+Date         datetime64[ns]
+Confirmed             int64
+Deaths                int64
+Recovered             int64
+dtype: object
+```
 ```
 
 I am going to change all the cumulative data to a non-cumulative form. So, let
@@ -87,11 +102,7 @@ cumu_data = dataset.copy()
 cumu_data.columns = ['Date','Total Cases','Total Deaths','Total Recovered']
 ```
 
-Now,I will turn the dataset in a non-cumulative form. Then I manually created a
-list named `tests` which contains the information about how many tests are taken
-each day. I will add this list as a new column to my `dataset` dataframe and
-save it to csv format. It will help if I try to reproduce the whole thing again.
-Also take a look at a portion of dataset to make sure everything is fine.
+Now,I will turn the dataset in a non-cumulative form. Then I manually created a list named `tests` which contains the information about how many tests are taken each day. I will add this list as a new column to my `dataset` dataframe and save it to csv format. It will help if I try to reproduce the whole thing again. Also take a look at a portion of dataset to make sure everything is fine.
 
 ```{.python .input  n=5}
 for i in range(len(dataset)-1,0,-1):
@@ -104,17 +115,15 @@ print(dataset.tail())
 ```
 
 ```{.json .output n=5}
-[
- {
-  "name": "stdout",
-  "output_type": "stream",
-  "text": "         Date  New Cases  New Deaths  New Recovered  New Tests\n29 2020-04-06         35           3              3        468\n30 2020-04-07         41           5              0        679\n31 2020-04-08         54           3              0        981\n32 2020-04-09        112           1              0        905\n33 2020-04-10         94           6              0       1184\n"
- }
-]
+         Date  New Cases  New Deaths  New Recovered  New Tests
+29 2020-04-06         35           3              3        468
+30 2020-04-07         41           5              0        679
+31 2020-04-08         54           3              0        981
+32 2020-04-09        112           1              0        905
+33 2020-04-10         94           6              0       1184
 ```
 
-But the test data were for each day, we also need to turn it to cumulative form.
-Lets do it.
+But the test data were for each day, we also need to turn it to cumulative form. Lets do it.
 
 ```{.python .input  n=6}
 cumu_tests = []
@@ -126,13 +135,8 @@ print(tests)
 ```
 
 ```{.json .output n=6}
-[
- {
-  "name": "stdout",
-  "output_type": "stream",
-  "text": "[120, 127, 137, 147, 163, 187, 211, 241, 268, 317, 366, 412, 448, 484, 549, 605, 697, 779, 905, 1011, 1058, 1167, 1320, 1460, 1617, 1758, 1961, 2395, 2762, 3230, 3909, 4890, 5795, 6979]\n[120, 7, 10, 10, 16, 24, 24, 30, 27, 49, 49, 46, 36, 36, 65, 56, 92, 82, 126, 106, 47, 109, 153, 140, 157, 141, 203, 434, 367, 468, 679, 981, 905, 1184]\n"
- }
-]
+[120, 127, 137, 147, 163, 187, 211, 241, 268, 317, 366, 412, 448, 484, 549, 605, 697, 779, 905, 1011, 1058, 1167, 1320, 1460, 1617, 1758, 1961, 2395, 2762, 3230, 3909, 4890, 5795, 6979]
+[120, 7, 10, 10, 16, 24, 24, 30, 27, 49, 49, 46, 36, 36, 65, 56, 92, 82, 126, 106, 47, 109, 153, 140, 157, 141, 203, 434, 367, 468, 679, 981, 905, 1184]
 ```
 
 Add this list to my cumulative dataset which is `cumu_data`.
@@ -143,24 +147,15 @@ print(cumu_data.tail())
 ```
 
 ```{.json .output n=7}
-[
- {
-  "name": "stdout",
-  "output_type": "stream",
-  "text": "         Date  Total Cases  Total Deaths  Total Recovered  Total Tests\n29 2020-04-06          123            12               33         3230\n30 2020-04-07          164            17               33         3909\n31 2020-04-08          218            20               33         4890\n32 2020-04-09          330            21               33         5795\n33 2020-04-10          424            27               33         6979\n"
- }
-]
+         Date  Total Cases  Total Deaths  Total Recovered  Total Tests
+29 2020-04-06          123            12               33         3230
+30 2020-04-07          164            17               33         3909
+31 2020-04-08          218            20               33         4890
+32 2020-04-09          330            21               33         5795
+33 2020-04-10          424            27               33         6979
 ```
 
-Now, this is time for the most interesting  part. Lets produce more data from
-what we have. I am calculing number of total active cases each day first in
-`active`. And then I will save percentage of death per confirmed case to
-`death_by_confirmed`, number of death divided by number of recovered to
-`death_by_recovered`, percentage of confirmed cases per total tests each day to
-`cases_by_tests`, number of confirmed cases per 1 million population in
-`cases_per_1m` and number of deaths per 1 million population to `deaths_per_1m`.
-Each of them is a series. Of course, I will print a portion of all of them to
-make sure they are calculated correctly.
+Now, this is time for the most interesting  part. Lets produce more data from what we have. I am calculing number of total active cases each day first in `active`. And then I will save percentage of death per confirmed case to `death_by_confirmed`, number of death divided by number of recovered to `death_by_recovered`, percentage of confirmed cases per total tests each day to `cases_by_tests`, number of confirmed cases per 1 million population in `cases_per_1m` and number of deaths per 1 million population to `deaths_per_1m`. Each of them is a series. Of course, I will print a portion of all of them to make sure they are calculated correctly.
 
 ```{.python .input  n=8}
 active = cumu_data['Total Cases'] - cumu_data['Total Deaths'] - cumu_data['Total Recovered']
@@ -176,17 +171,33 @@ print(cases_per_1m.tail())
 ```
 
 ```{.json .output n=8}
-[
- {
-  "name": "stdout",
-  "output_type": "stream",
-  "text": "29     78\n30    114\n31    165\n32    276\n33    364\ndtype: int64\n29     9.756098\n30    10.365854\n31     9.174312\n32     6.363636\n33     6.367925\ndtype: float64\n29    0.363636\n30    0.515152\n31    0.606061\n32    0.636364\n33    0.818182\ndtype: float64\n29    0.683333\n30    0.911111\n31    1.211111\n32    1.833333\n33    2.355556\nName: Total Cases, dtype: float64\n"
- }
-]
+29     78
+30    114
+31    165
+32    276
+33    364
+dtype: int64
+29     9.756098
+30    10.365854
+31     9.174312
+32     6.363636
+33     6.367925
+dtype: float64
+29    0.363636
+30    0.515152
+31    0.606061
+32    0.636364
+33    0.818182
+dtype: float64
+29    0.683333
+30    0.911111
+31    1.211111
+32    1.833333
+33    2.355556
+Name: Total Cases, dtype: float64
 ```
 
-Now I will append all the series from previous part to the `dataset` dataframe.
-This is our complete extended dataset. Check wheather nothing is miscalculated.
+Now I will append all the series from previous part to the `dataset` dataframe. This is our complete extended dataset. Check wheather nothing is miscalculated.
 
 ```{.python .input  n=9}
 dataset['Total Cases'] = cumu_data['Total Cases']
@@ -203,18 +214,29 @@ print(dataset.head())
 ```
 
 ```{.json .output n=9}
-[
- {
-  "name": "stdout",
-  "output_type": "stream",
-  "text": "        Date  New Cases  New Deaths  New Recovered  New Tests  Total Cases  \\\n0 2020-03-08          3           0              0        120            3   \n1 2020-03-09          0           0              0          7            3   \n2 2020-03-10          0           0              0         10            3   \n3 2020-03-11          0           0              0         10            3   \n4 2020-03-12          0           0              0         16            3   \n\n   Total Deaths  Total Recovered  Total Active  Total Tests  Death/Cases (%)  \\\n0             0                0             3          120              0.0   \n1             0                0             3          127              0.0   \n2             0                0             3          137              0.0   \n3             0                0             3          147              0.0   \n4             0                0             3          163              0.0   \n\n   Death/Recovered  Cases/Tests(%)  Cases/1M Pop.  Deaths/1M Pop.  \n0              0.0        2.500000       0.016667             0.0  \n1              0.0        2.362205       0.016667             0.0  \n2              0.0        2.189781       0.016667             0.0  \n3              0.0        2.040816       0.016667             0.0  \n4              0.0        1.840491       0.016667             0.0  \n"
- }
-]
+        Date  New Cases  New Deaths  New Recovered  New Tests  Total Cases  \
+0 2020-03-08          3           0              0        120            3   
+1 2020-03-09          0           0              0          7            3   
+2 2020-03-10          0           0              0         10            3   
+3 2020-03-11          0           0              0         10            3   
+4 2020-03-12          0           0              0         16            3   
+
+   Total Deaths  Total Recovered  Total Active  Total Tests  Death/Cases (%)  \
+0             0                0             3          120              0.0   
+1             0                0             3          127              0.0   
+2             0                0             3          137              0.0   
+3             0                0             3          147              0.0   
+4             0                0             3          163              0.0   
+
+   Death/Recovered  Cases/Tests(%)  Cases/1M Pop.  Deaths/1M Pop.  
+0              0.0        2.500000       0.016667             0.0  
+1              0.0        2.362205       0.016667             0.0  
+2              0.0        2.189781       0.016667             0.0  
+3              0.0        2.040816       0.016667             0.0  
+4              0.0        1.840491       0.016667             0.0  
 ```
 
-So the complete extended dataset will be saved to csv. For convenience, I would
-like to store one of it each day with the date when I created them. It will be
-very helpful in future if I need to use them again.
+So the complete extended dataset will be saved to csv. For convenience, I would like to store one of it each day with the date when I created them. It will be very helpful in future if I need to use them again.
 
 ```{.python .input  n=10}
 dataset.to_csv('covid-19_bd_extended_' + str(date.today()) + '.csv',index=False,float_format='%.3f')
@@ -233,24 +255,10 @@ plt.show()
 ```
 
 ```{.json .output n=11}
-[
- {
-  "data": {
-   "image/png": "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\n",
-   "text/plain": "<Figure size 432x288 with 1 Axes>"
-  },
-  "metadata": {
-   "needs_background": "light"
-  },
-  "output_type": "display_data"
- }
-]
+![alt text](https://github.com/promitbasak/Covid-19_bd_extended/raw/master/assests/2020-04-10/Figure_1.png "Fig_1")
 ```
 
-Okay. So the dataset has been built. Now it's time to do some visualization. I
-will use pyplot to obtain curves and bartcharts. These charts will give a very
-good idea of the current situation of Covid-19 epidemic in Bangladesh. I will
-use different colors for different kind of data.
+Okay. So the dataset has been built. Now it's time to do some visualization. I will use pyplot to obtain curves and bartcharts. These charts will give a very good idea of the current situation of Covid-19 epidemic in Bangladesh. I will use different colors for different kind of data.
 
 ```{.python .input  n=12}
 plt.plot(dataset['Date'],dataset['Total Cases'],alpha=0.8)
