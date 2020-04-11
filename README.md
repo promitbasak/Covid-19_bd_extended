@@ -471,4 +471,5 @@ plt.show()
 
 I think this is a good practice for today. It's pretty late to sleep. So I finish it here. I will do some more work on it, if something comes to my mind.
 
-## All the data here are collected until April 10, 2020. I may not upadate readme anymore, but I will try to upload new datasets and figures everyday.
+
+## Note: All the data here are collected until April 10, 2020. I may not upadate readme anymore, but I will try to upload new datasets and figures everyday in `assets` folder.
