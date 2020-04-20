@@ -1,5 +1,15 @@
 # Creating an Extended dataset of Covid-19 Epidemic in Bangladesh and showing them in some basic visualizations
 
+### What I did here includes:
+1. Dataset of common data including daily and cumulative cases, recovered and deaths.
+2. Data of daily and cumulative cpvid-19 tests.
+3. Some extended stats including deaths per cases, cases per tests, deaths per recovered, cases per 1M population and deaths per 1M population
+4. Data visualization for each of the stats.
+5. Extra data visualization of a comparison between Bangladesh and USA.
+6. District-wise case distribution stats.
+7. District-wise data visualization.
+8. Most of the data are available on https://promitbasak.github.io/covid19bd for easy web viewing.
+
 Covid-19 has taken an epidemic form all over the world. Producing a fair dataset of all the informations will give a closer look to the dynamics of the current situation. But, in Bangladesh, it is very hard to get an extended database. All I found on the internet are Cumulative dataset of Confirmed, Recovered and Deaths only. So, I decided to make one myself. I am a very very beginner in this arena. So, this is actually my practice pad.
 
 I got a dataset on the Internet only containing the cumulative Confirmed, Recovered and Deaths counts. I happen to find some press releases regarding covid-19 on these sources, [Here](https://iedcr.gov.bd/index.php/component/content/article/11-others/227-pressrelease) and [Here](https://corona.gov.bd/press-release). But they contain inconsistant
