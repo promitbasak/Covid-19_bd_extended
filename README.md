@@ -1,7 +1,7 @@
 # Creating an Extended dataset of Covid-19 Epidemic in Bangladesh and showing them in some basic visualizations
 
 ### What I did here includes:
-1. Dataset of common data including daily and cumulative cases, recovered and deaths.
+1. Dataset of common stats including daily and cumulative cases, recovered and deaths.
 2. Data of daily and cumulative covid-19 tests.
 3. Some extended stats including deaths per cases, cases per tests, deaths per recovered, cases per 1M population and deaths per 1M population
 4. District-wise total case distribution (from April 19) with new cases per district.
